@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Museum | Beta Version</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">META <span class="highlight">MUSEUM</span></div>
+        <div class="user-info">
+            <span id="user-credits"><i class="fa-solid fa-coins"></i> 1000 MC</span>
+            <div class="user-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="L'ARTE CHE SI MUOVE CON TE">L'ARTE CHE SI MUOVE CON TE</h1>
+            <p class="subtitle">Il primo museo interattivo dove ogni sguardo genera valore.</p>
+            <div class="cta-group">
+                <button class="btn btn-primary" onclick="scrollToSection('gallery')">Esplora la Galleria</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('market')">Analisi Mercato</button>
+            </div>
+        </div>
+        <div class="hero-3d-bg">
+            <div class="floating-cube"></div>
+        </div>
+    </header>
+
+    <section class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Opere in Beta</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">12.5k</span>
+            <span class="stat-label">Interazioni Simulate</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">+18%</span>
+            <span class="stat-label">Crescita Media</span>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <h2>Galleria Immersiva</h2>
+            <p>Clicca su un'opera per analizzarne il valore dinamico.</p>
+        </div>
+        
+        <div class="gallery-grid" id="gallery-container">
+            </div>
+    </section>
+
+    <section class="market-section" id="market">
+        <div class="section-header">
+            <h2>Market Trend (Simulazione)</h2>
+            <p>Osserva come l'algoritmo reagisce in tempo reale.</p>
+        </div>
+        <div class="market-table-container">
+            <table class="market-table">
+                <thead>
+                    <tr>
+                        <th>Opera</th>
+                        <th>Trend</th>
+                        <th>Valore (MetaCredits)</th>
+                        <th>Variazione 24h</th>
+                    </tr>
+                </thead>
+                <tbody id="market-body">
+                    </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-card">
+            <i class="fa-solid fa-heart-pulse icon-glow"></i>
+            <h3>Algoritmo Dinamico</h3>
+            <p>Il prezzo non è fisso. <br>Like (+0.5), View (+0.1), Offerte (+5.0) modificano il valore istantaneamente.</p>
+        </div>
+        <div class="info-card">
+            <i class="fa-solid fa-chart-line icon-glow"></i>
+            <h3>Investimento 2.0</h3>
+            <p>Compra quote di opere digitali. <br>Nella fase Beta usiamo "MetaCredits" virtuali a rischio zero.</p>
+        </div>
+        <div class="info-card">
+            <i class="fa-solid fa-layer-group icon-glow"></i>
+            <h3>Roadmap</h3>
+            <p><strong>Fase 1:</strong> Beta Didattica (Ora)<br><strong>Fase 2:</strong> Mercato Reale & SRLS<br><strong>Fase 3:</strong> App Mobile</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>META MUSEUM</h3>
+            <p>Progetto X - Prototipo Didattico[cite: 26]. Nessun denaro reale coinvolto.</p>
+            <p class="copyright">© 2024 Meta Museum Team.</p>
+        </div>
+    </footer>
+
+    <div id="art-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-image-container">
+                    <img id="modal-img" src="" alt="Opera">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-title">Titolo Opera</h2>
+                    <p id="modal-artist">Artista</p>
+                    <div class="live-price-box">
+                        <span>Valore Attuale</span>
+                        <h3 id="modal-price">0 MC</h3>
+                    </div>
+                    <div class="chart-placeholder">
+                        <div class="fake-graph-line"></div>
+                    </div>
+                    <div class="interaction-buttons">
+                        <button class="btn-action" id="btn-like"><i class="fa-regular fa-heart"></i> Like (+0.5)</button>
+                        <button class="btn-action" id="btn-bid"><i class="fa-solid fa-gavel"></i> Offerta (+5.0)</button>
+                    </div>
+                    <p class="simulation-note">L'azione aggiorna l'algoritmo in tempo reale.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
